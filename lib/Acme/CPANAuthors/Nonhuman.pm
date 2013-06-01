@@ -2,14 +2,16 @@ use strict;
 use warnings;
 package Acme::CPANAuthors::Nonhuman;
 {
-  $Acme::CPANAuthors::Nonhuman::VERSION = '0.001';
+  $Acme::CPANAuthors::Nonhuman::VERSION = '0.002';
 }
-# git description: c51008a
+# git description: v0.001-2-gd5a6baf
 
 BEGIN {
   $Acme::CPANAuthors::Nonhuman::AUTHORITY = 'cpan:ETHER';
 }
 # ABSTRACT: We are non-human CPAN authors
+
+use Acme::CPANAuthors 0.16 ();
 
 use Acme::CPANAuthors::Register (
     ETHER => 'Karen Etheridge',
@@ -39,7 +41,7 @@ Acme::CPANAuthors::Nonhuman - We are non-human CPAN authors
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 SYNOPSIS
 
@@ -80,6 +82,9 @@ On the internet, no one knows you're a cat (unless your avatar gives it away)!
 </center>
 
 =end html
+
+The original list of authors was determined via
+L<The Faces of CPAN|http://hexten.net/cpan-faces/>.
 
 =head1 SUPPORT
 

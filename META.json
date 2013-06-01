@@ -40,6 +40,7 @@
       },
       "runtime" : {
          "requires" : {
+            "Acme::CPANAuthors" : "0.16",
             "Acme::CPANAuthors::Register" : "0",
             "perl" : "5.006",
             "strict" : "0",
@@ -48,7 +49,6 @@
       },
       "test" : {
          "requires" : {
-            "Acme::CPANAuthors" : "0",
             "File::Find" : "0",
             "File::Temp" : "0",
             "Test::CheckDeps" : "0.002",
@@ -61,7 +61,7 @@
    "provides" : {
       "Acme::CPANAuthors::Nonhuman" : {
          "file" : "lib/Acme/CPANAuthors/Nonhuman.pm",
-         "version" : "0.001"
+         "version" : "0.002"
       }
    },
    "release_status" : "stable",
@@ -77,7 +77,7 @@
          "web" : "https://github.com/karenetheridge/Acme-CPANAuthors-Nonhuman"
       }
    },
-   "version" : "0.001",
+   "version" : "0.002",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.019000"
