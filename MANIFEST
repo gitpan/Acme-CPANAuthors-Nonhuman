@@ -8,6 +8,7 @@ META.yml
 README
 dist.ini
 html.pl
+inc/MungeWithData.pm
 lib/Acme/CPANAuthors/Nonhuman.pm
 t/00-check-deps.t
 t/00-compile.t
@@ -15,6 +16,7 @@ t/01-basic.t
 weaver.ini
 xt/author/pod-spell.t
 xt/release/changes_has_content.t
+xt/release/clean-namespaces.t
 xt/release/cpan-changes.t
 xt/release/distmeta.t
 xt/release/eol.t
@@ -25,3 +27,4 @@ xt/release/pod-coverage.t
 xt/release/pod-no404s.t
 xt/release/pod-syntax.t
 xt/release/test-version.t
+xt/release/unused-vars.t
