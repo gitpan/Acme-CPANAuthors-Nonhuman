@@ -1,5 +1,12 @@
 Revision history for Acme-CPANAuthors-Nonhuman
 
+0.004     2013-07-14 12:21:01 PDT-0700 (Karen Etheridge)
+          - simplify creation of ad-hoc author object at build time
+          - (hopefully) fix html cell padding issue on metacpan
+          - use utf8 pragma, in case some names contain unicode characters
+          - include a bit of background to why I wrote this
+          - id=>name hash is also kept sorted
+
 0.003     2013-07-05 18:04:20 PDT-0700 (Karen Etheridge)
           - rewrite code and HTML generation by using embedded templates in
             the .pm file and authors in __DATA__, and a custom Dist::Zilla

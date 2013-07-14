@@ -2,9 +2,9 @@ use strict;
 use warnings;
 package Acme::CPANAuthors::Nonhuman;
 {
-  $Acme::CPANAuthors::Nonhuman::VERSION = '0.003';
+  $Acme::CPANAuthors::Nonhuman::VERSION = '0.004';
 }
-# git description: v0.002-11-ge11c8e4
+# git description: v0.003-11-g614c366
 
 BEGIN {
   $Acme::CPANAuthors::Nonhuman::AUTHORITY = 'cpan:ETHER';
@@ -13,6 +13,7 @@ BEGIN {
 
 use namespace::autoclean;
 use Acme::CPANAuthors 0.16 ();  # not really needed anymore...
+use utf8;
 
 # TODO: we can get around the whole "we have to load the module before we
 # replace the template code, so we have to make sure it still evaluates"
@@ -22,32 +23,32 @@ use Acme::CPANAuthors 0.16 ();  # not really needed anymore...
 # emulate? :D
 
 # predeclare variables so we don't blow up parsing the template code
-my ($DATA, $authorhash);
+my ($DATA, $authors, @ids);
 my %authors = (
 # this data was generated at build time via __DATA__ section and inc::MungeWithData
-    GLEACH  => 'Geoffrey Leach',
-    HIROSE  => 'HIROSE Masaaki',
-    ARUN  => 'Arun Venkataraman',
-    MITHALDU  => 'Christian Walde',
-    ACE  => 'yuichi tsunoda',
-    INFRARED  => 'Michael Kroher',
-    AKIHITO  => 'Akihito Takeda',
     ETHER  => 'Karen Etheridge',
-    KIBI  => 'Cyril Brulebois',
+    MITHALDU  => 'Christian Walde',
     DOLMEN  => 'Olivier Mengue',
-    AKXLIX  => 'azuma, kuniyuki',
-    ARUNBEAR  => 'Arun Prasaad',
     IVANWILLS  => 'Ivan Wills',
-    GAURAV  => 'Gaurav Vaidya',
-    BIGREDS  => 'Avi Greenbury',
+    HIROSE  => 'HIROSE Masaaki',
+    KAARE  => 'Kaare Rasmussen',
     BBAXTER  => 'Brad Baxter',
     ABERNDT  => 'Alan Berndt',
-    BAHOOTYPR  => 'Bahootyper',
+    ARUNBEAR  => 'Arun Prasaad',
+    GLEACH  => 'Geoffrey Leach',
     MAXS  => 'Maxime Soule',
-    KAARE  => 'Kaare Rasmussen',
+    AKIHITO  => 'Akihito Takeda',
     FGA  => 'Fabrice Gabolde',
-    PERLPIE  => 'perlpie',
+    ACE  => 'yuichi tsunoda',
+    AKXLIX  => 'azuma, kuniyuki',
+    ARUN  => 'Arun Venkataraman',
+    BAHOOTYPR  => 'Bahootyper',
+    BIGREDS  => 'Avi Greenbury',
     DAIBA  => 'DAIBA, Keiichi',
+    INFRARED  => 'Michael Kroher',
+    KIBI  => 'Cyril Brulebois',
+    GAURAV  => 'Gaurav Vaidya',
+    PERLPIE  => 'perlpie',
 
 );
 
@@ -65,7 +66,7 @@ Sub::Install::install_sub({
 
 =encoding utf-8
 
-=for :stopwords Karen Etheridge irc
+=for :stopwords Karen Etheridge programmatically irc
 
 =head1 NAME
 
@@ -73,7 +74,7 @@ Acme::CPANAuthors::Nonhuman - We are non-human CPAN authors
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 SYNOPSIS
 
@@ -94,7 +95,7 @@ On the internet, no one knows you're a cat (unless your avatar gives it away)!
 
 =begin html
 
-<div style="text-align:center;padding:5px">
+<div style="text-align:center;padding:5px !important">
 <a href="http://metacpan.org/author/ETHER"><img src="http://www.gravatar.com/avatar/bdc5cd06679e732e262f6c1b450a0237?d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fbdc5cd06679e732e262f6c1b450a0237" alt="ETHER" /></a>
 <a href="http://metacpan.org/author/MITHALDU"><img src="http://www.gravatar.com/avatar/f77c2e7572ed0efa7bb025111330e1b2?d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fd9c28af939032ab0c30fd7be8fdc1040" alt="MITHALDU" /></a>
 <a href="http://metacpan.org/author/DOLMEN"><img src="http://www.gravatar.com/avatar/70d9b050bfe39350c234d710fadfcd39?d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2F70d9b050bfe39350c234d710fadfcd39" alt="DOLMEN" /></a>
@@ -130,6 +131,13 @@ On the internet, no one knows you're a cat (unless your avatar gives it away)!
 
 The original list of authors was determined via
 L<The Faces of CPAN|http://hexten.net/cpan-faces/>.
+
+I wrote this module initially as a reaction to a previous L<Acme::CPANAuthors>
+distribution that inappropriately highlighted a particular demographic (it has
+now since been deleted).  Then, I realized that so much of the content I
+wanted to include in this module could be programmatically generated, so I
+continued on as an exercise in templating code at build time using raw data in
+the C<__DATA__> section.
 
 =head1 SUPPORT
 

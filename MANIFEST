@@ -7,7 +7,6 @@ META.json
 META.yml
 README
 dist.ini
-html.pl
 inc/MungeWithData.pm
 lib/Acme/CPANAuthors/Nonhuman.pm
 t/00-check-deps.t
