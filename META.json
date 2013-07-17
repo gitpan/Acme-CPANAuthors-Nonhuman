@@ -21,20 +21,6 @@
       ]
    },
    "prereqs" : {
-      "build" : {
-         "requires" : {
-            "Acme::CPANAuthors" : "0",
-            "Acme::CPANAuthors::Utils::Authors" : "0",
-            "Dist::Zilla::Role::FileFinderUser" : "0",
-            "Dist::Zilla::Role::FileMunger" : "0",
-            "Dist::Zilla::Role::TextTemplate" : "0",
-            "HTTP::Tiny" : "0",
-            "Module::Metadata" : "0",
-            "Moose" : "0",
-            "namespace::autoclean" : "0",
-            "perl" : "5.010"
-         }
-      },
       "configure" : {
          "requires" : {
             "Module::Build::Tiny" : "0.025"
@@ -42,19 +28,30 @@
       },
       "develop" : {
          "requires" : {
+            "Acme::CPANAuthors" : "0",
+            "Acme::CPANAuthors::Utils::Authors" : "0",
             "Dist::Zilla" : "4.300035",
             "Dist::Zilla::Plugin::ModuleBuildTiny" : "0",
-            "Dist::Zilla::PluginBundle::Author::ETHER" : "0.011",
+            "Dist::Zilla::PluginBundle::Author::ETHER" : "0.012",
+            "Dist::Zilla::Role::FileFinderUser" : "0",
+            "Dist::Zilla::Role::FileMunger" : "0",
+            "Dist::Zilla::Role::TextTemplate" : "0",
+            "HTTP::Tiny" : "0",
+            "Module::Metadata" : "0",
+            "Moose" : "0",
             "Pod::Coverage::TrustPod" : "0",
             "Test::CPAN::Changes" : "0.19",
             "Test::CPAN::Meta" : "0",
             "Test::Pod" : "1.41",
-            "Test::Pod::Coverage" : "1.08"
+            "Test::Pod::Coverage" : "1.08",
+            "namespace::autoclean" : "0",
+            "perl" : "5.010"
          }
       },
       "runtime" : {
          "requires" : {
-            "Acme::CPANAuthors" : "0.16",
+            "Acme::CPANAuthors" : "0.23",
+            "Acme::CPANAuthors::Factory" : "0",
             "Sub::Install" : "0",
             "namespace::autoclean" : "0",
             "perl" : "5.008",
@@ -65,7 +62,6 @@
       },
       "test" : {
          "requires" : {
-            "Capture::Tiny" : "0",
             "File::Find" : "0",
             "File::Temp" : "0",
             "Test::CheckDeps" : "0.006",
@@ -78,7 +74,7 @@
    "provides" : {
       "Acme::CPANAuthors::Nonhuman" : {
          "file" : "lib/Acme/CPANAuthors/Nonhuman.pm",
-         "version" : "0.004"
+         "version" : "0.005"
       }
    },
    "release_status" : "stable",
@@ -94,7 +90,7 @@
          "web" : "https://github.com/karenetheridge/Acme-CPANAuthors-Nonhuman"
       }
    },
-   "version" : "0.004",
+   "version" : "0.005",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.019001"
@@ -133,7 +129,7 @@
          {
             "class" : "Dist::Zilla::Plugin::MetaProvides::Package",
             "name" : "@Author::ETHER/MetaProvides::Package",
-            "version" : "1.14000002"
+            "version" : "1.14000003"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaConfig",
@@ -183,7 +179,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Test::Compile",
             "name" : "@Author::ETHER/Test::Compile",
-            "version" : "2.005"
+            "version" : "2.002"
          },
          {
             "class" : "Dist::Zilla::Plugin::Test::CheckDeps",
@@ -395,11 +391,11 @@
             "class" : "Dist::Zilla::Plugin::Prereqs",
             "config" : {
                "Dist::Zilla::Plugin::Prereqs" : {
-                  "phase" : "build",
+                  "phase" : "develop",
                   "type" : "requires"
                }
             },
-            "name" : "BuildRequires",
+            "name" : "DevelopRequires",
             "version" : "4.300035"
          },
          {
