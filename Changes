@@ -1,7 +1,16 @@
 Revision history for Acme-CPANAuthors-Nonhuman
 
+0.007     2013-08-20 01:54:44Z (Karen Etheridge)
+          - further simplified the build templating code, to take advantage of
+            new features of [MungeFile::WithData]
+          - added tooltip for each avatar image, providing PAUSE id, name, and
+            number of distributions
+          - added ORCHEW, VOJ
+
 0.006     2013-08-16 05:32:38Z (Karen Etheridge)
           - proper fix for html image spacing (for real this time?)
+          - split off file munging code (run at build time) into its own
+            distribution (Dist::Zilla::Plugin::MungeFile::WithData).
 
 0.005     2013-07-17 09:11:29 PDT-0700 (Karen Etheridge)
           - better fix for html image spacing
