@@ -11,6 +11,7 @@ lib/Acme/CPANAuthors/Nonhuman.pm
 t/00-check-deps.t
 t/00-compile.t
 t/01-basic.t
+t/02-siblings.t
 weaver.ini
 xt/author/pod-spell.t
 xt/release/changes_has_content.t

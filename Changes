@@ -1,5 +1,9 @@
 Revision history for Acme-CPANAuthors-Nonhuman
 
+0.008     2013-08-29 05:07:48Z (Karen Etheridge)
+          - new test added to track down encoding errors in other author
+            modules, with the help of cpantesters
+
 0.007     2013-08-20 01:54:44Z (Karen Etheridge)
           - further simplified the build templating code, to take advantage of
             new features of [MungeFile::WithData]

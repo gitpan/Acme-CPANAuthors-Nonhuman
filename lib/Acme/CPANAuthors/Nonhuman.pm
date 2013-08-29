@@ -1,21 +1,21 @@
 use strict;
 use warnings;
 package Acme::CPANAuthors::Nonhuman;
-{
-  $Acme::CPANAuthors::Nonhuman::VERSION = '0.007';
-}
-# git description: v0.006-8-g5992a98
-
 BEGIN {
   $Acme::CPANAuthors::Nonhuman::AUTHORITY = 'cpan:ETHER';
 }
+{
+  $Acme::CPANAuthors::Nonhuman::VERSION = '0.008';
+}
+# git description: v0.007-5-gb5a6c3a
+
 # ABSTRACT: We are non-human CPAN authors
 
 use namespace::autoclean;
 use utf8;
 
 my %authors = (
-# this data was generated at build time via __DATA__ section and Dist::Zilla::Plugin::MungeFile::WithData 0.003
+# this data was generated at build time via __DATA__ section and Dist::Zilla::Plugin::MungeFile::WithData 0.004
     ETHER => 'Karen Etheridge',
     VOJ => 'Jakob Voss',
     MITHALDU => 'Christian Walde',
@@ -65,7 +65,7 @@ Acme::CPANAuthors::Nonhuman - We are non-human CPAN authors
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 SYNOPSIS
 
@@ -87,8 +87,8 @@ On the internet, no one knows you're a cat (unless your avatar gives it away)!
 =begin html
 
 <div style="text-align:center;padding:0px !important">
-<!-- this data was generated at build time via __DATA__ section and Dist::Zilla::Plugin::MungeFile::WithData 0.003 -->
-<a href="http://metacpan.org/author/ETHER"><img style="margin-bottom:5px;margin-right:3px !important" src="http://www.gravatar.com/avatar/bdc5cd06679e732e262f6c1b450a0237?d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fbdc5cd06679e732e262f6c1b450a0237" alt="ETHER" title="ETHER (Karen Etheridge), 62 distributions" /></a>
+<!-- this data was generated at build time via __DATA__ section and Dist::Zilla::Plugin::MungeFile::WithData 0.004 -->
+<a href="http://metacpan.org/author/ETHER"><img style="margin-bottom:5px;margin-right:3px !important" src="http://www.gravatar.com/avatar/bdc5cd06679e732e262f6c1b450a0237?d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fbdc5cd06679e732e262f6c1b450a0237" alt="ETHER" title="ETHER (Karen Etheridge), 66 distributions" /></a>
 <a href="http://metacpan.org/author/VOJ"><img style="margin-bottom:5px;margin-right:3px !important" src="http://www.gravatar.com/avatar/9827ddb7c8cb132375cf55bf7e624250?d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fdcad11c6680a6c59cc31d2bf1b3975e5" alt="VOJ" title="VOJ (Jakob Voss), 40 distributions" /></a>
 <a href="http://metacpan.org/author/MITHALDU"><img style="margin-bottom:5px;margin-right:3px !important" src="http://www.gravatar.com/avatar/f77c2e7572ed0efa7bb025111330e1b2?d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fd9c28af939032ab0c30fd7be8fdc1040" alt="MITHALDU" title="MITHALDU (Christian Walde), 27 distributions" /></a>
 <a href="http://metacpan.org/author/DOLMEN"><img style="margin-bottom:5px;margin-right:3px !important" src="http://www.gravatar.com/avatar/70d9b050bfe39350c234d710fadfcd39?d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2F70d9b050bfe39350c234d710fadfcd39" alt="DOLMEN" title="DOLMEN (Olivier Mengue), 21 distributions" /></a>
