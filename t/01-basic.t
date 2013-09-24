@@ -3,9 +3,12 @@ use warnings FATAL => 'all';
 
 use Test::More;
 use Test::Deep;
-use Test::Warnings;
+use if $ENV{AUTHOR_TESTING}, 'Test::Warnings';
 use Acme::CPANAuthors 0.16;
 use Acme::CPANAuthors::Nonhuman;
+
+plan skip_all => 'Need a built version of Acme::CPANAuthors::Nonhuman for this test'
+    if -d '.git';
 
 my $authors = Acme::CPANAuthors->new('Nonhuman');
 

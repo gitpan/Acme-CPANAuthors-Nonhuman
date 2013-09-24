@@ -5,11 +5,13 @@ LICENSE
 MANIFEST
 META.json
 META.yml
+Makefile.PL
 README
 dist.ini
 lib/Acme/CPANAuthors/Nonhuman.pm
 t/00-check-deps.t
 t/00-compile.t
+t/00-report-prereqs.t
 t/01-basic.t
 t/02-siblings.t
 weaver.ini
@@ -21,6 +23,7 @@ xt/release/distmeta.t
 xt/release/eol.t
 xt/release/kwalitee.t
 xt/release/minimum-version.t
+xt/release/mojibake.t
 xt/release/no-tabs.t
 xt/release/pod-coverage.t
 xt/release/pod-no404s.t
