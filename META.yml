@@ -34,7 +34,7 @@ no_index:
 provides:
   Acme::CPANAuthors::Nonhuman:
     file: lib/Acme/CPANAuthors/Nonhuman.pm
-    version: 0.009
+    version: 0.010
 requires:
   Sub::Install: 0
   namespace::autoclean: 0
@@ -46,10 +46,10 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=Acme-CPANAuthors-Nonhuman
   homepage: https://github.com/karenetheridge/Acme-CPANAuthors-Nonhuman
   repository: https://github.com/karenetheridge/Acme-CPANAuthors-Nonhuman.git
-version: 0.009
+version: 0.010
 x_Dist_Zilla:
   perl:
-    version: 5.019003
+    version: 5.019004
   plugins:
     -
       class: Dist::Zilla::Plugin::MungeFile::WithData
@@ -62,11 +62,11 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::PromptIfStale
       name: '@Author::ETHER/build'
-      version: 0.005
+      version: 0.006
     -
       class: Dist::Zilla::Plugin::PromptIfStale
       name: '@Author::ETHER/release'
-      version: 0.005
+      version: 0.006
     -
       class: Dist::Zilla::Plugin::ExecDir
       name: '@Author::ETHER/ExecDir'
@@ -128,7 +128,7 @@ x_Dist_Zilla:
             - ':ExecFiles'
             - '@Author::ETHER/Examples'
       name: '@Author::ETHER/Test::NoTabs'
-      version: 0.02
+      version: 0.04
     -
       class: Dist::Zilla::Plugin::EOLTests
       name: '@Author::ETHER/EOLTests'
@@ -266,7 +266,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::MakeMaker::Fallback
       name: '@Author::ETHER/MakeMaker::Fallback'
-      version: 0.001
+      version: 0.002
     -
       class: Dist::Zilla::Plugin::ModuleBuildTiny
       name: '@Author::ETHER/ModuleBuildTiny'
