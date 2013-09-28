@@ -53,6 +53,7 @@
       "runtime" : {
          "requires" : {
             "Sub::Install" : "0",
+            "base" : "2.18",
             "namespace::autoclean" : "0",
             "perl" : "5.008",
             "strict" : "0",
@@ -81,7 +82,7 @@
    "provides" : {
       "Acme::CPANAuthors::Nonhuman" : {
          "file" : "lib/Acme/CPANAuthors/Nonhuman.pm",
-         "version" : "0.010"
+         "version" : "0.011"
       }
    },
    "release_status" : "stable",
@@ -97,7 +98,7 @@
          "web" : "https://github.com/karenetheridge/Acme-CPANAuthors-Nonhuman"
       }
    },
-   "version" : "0.010",
+   "version" : "0.011",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.019004"
@@ -187,7 +188,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Test::CheckDeps",
             "name" : "@Author::ETHER/Test::CheckDeps",
-            "version" : "0.008"
+            "version" : "0.009"
          },
          {
             "class" : "Dist::Zilla::Plugin::Test::NoTabs",
@@ -297,8 +298,16 @@
          },
          {
             "class" : "Dist::Zilla::Plugin::PodWeaver",
+            "config" : {
+               "Dist::Zilla::Plugin::PodWeaver" : {
+                  "finder" : [
+                     ":InstallModules",
+                     ":ExecFiles"
+                  ]
+               }
+            },
             "name" : "@Author::ETHER/PodWeaver",
-            "version" : "3.101642"
+            "version" : "3.102000"
          },
          {
             "class" : "Dist::Zilla::Plugin::NextRelease",
@@ -308,7 +317,7 @@
          {
             "class" : "Dist::Zilla::Plugin::GithubMeta",
             "name" : "@Author::ETHER/GithubMeta",
-            "version" : "0.38"
+            "version" : "0.40"
          },
          {
             "class" : "Dist::Zilla::Plugin::AutoMetaResources",
@@ -387,7 +396,7 @@
          {
             "class" : "Dist::Zilla::Plugin::InstallGuide",
             "name" : "@Author::ETHER/InstallGuide",
-            "version" : "1.200000"
+            "version" : "1.200001"
          },
          {
             "class" : "Dist::Zilla::Plugin::CopyFilesFromBuild",
@@ -462,6 +471,17 @@
          {
             "class" : "Dist::Zilla::Plugin::ConfirmRelease",
             "name" : "@Author::ETHER/ConfirmRelease",
+            "version" : "4.300039"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Prereqs",
+            "config" : {
+               "Dist::Zilla::Plugin::Prereqs" : {
+                  "phase" : "runtime",
+                  "type" : "requires"
+               }
+            },
+            "name" : "RuntimeRequires",
             "version" : "4.300039"
          },
          {

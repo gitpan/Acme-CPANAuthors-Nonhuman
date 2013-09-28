@@ -24,6 +24,7 @@ my @modules = qw(
   Test::CheckDeps
   Test::Deep
   Test::More
+  base
   if
   namespace::autoclean
   perl
