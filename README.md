@@ -1,81 +1,12 @@
-use strict;
-use warnings;
-package Acme::CPANAuthors::Nonhuman;
-BEGIN {
-  $Acme::CPANAuthors::Nonhuman::AUTHORITY = 'cpan:ETHER';
-}
-{
-  $Acme::CPANAuthors::Nonhuman::VERSION = '0.012';
-}
-# git description: v0.011-3-g37634fe
-
-# ABSTRACT: We are non-human CPAN authors
-
-use namespace::autoclean;
-use utf8;
-
-my %authors = (
-# this data was generated at build time via __DATA__ section
-# and Dist::Zilla::Plugin::MungeFile::WithData 0.004
-    ETHER => 'Karen Etheridge',
-    VOJ => 'Jakob Voß',
-    MITHALDU => 'Christian Walde',
-    DOLMEN => 'Olivier Mengué',
-    IVANWILLS => 'Ivan Wills',
-    HIROSE => 'HIROSE Masaaki',
-    KAARE => 'Kaare Rasmussen',
-    BBAXTER => 'Brad Baxter',
-    ABERNDT => 'Alan Berndt',
-    SIMCOP => 'Ryan Voots',
-    ZOUL => 'Tomáš Znamenáček',
-    ARUNBEAR => 'Arun Prasaad',
-    GLEACH => 'Geoffrey Leach',
-    MAXS => 'Maxime Soulé',
-    AKIHITO => 'Akihito Takeda',
-    FGA => 'Fabrice Gabolde',
-    SKINGTON => 'Sam Kington',
-    ACE => 'yuichi tsunoda',
-    AKXLIX => 'azuma, kuniyuki',
-    ARUN => 'Arun Venkataraman',
-    BAHOOTYPR => 'Bahootyper',
-    BIGREDS => 'Avi Greenbury',
-    DAIBA => '台場 圭一',
-    INFRARED => 'Michael Kroher',
-    KIBI => 'Cyril Brulebois',
-    ROBMAN => 'Rob Manson',
-    GAURAV => 'Gaurav Vaidya',
-    ORCHEW => 'Cooper Vertz',
-    PERLPIE => 'perlpie',
-    SZARATE => 'Santiago Zarate',
-    ZHDA => 'Denis Zhdanov',
-
-);
-
-use Sub::Install;
-Sub::Install::install_sub({
-    code => sub { wantarray ? %authors : \%authors },
-    into => __PACKAGE__,
-    as   => 'authors',
-});
-
-1;
-# this list isn't sorted by name but by the date they were added
-
-=pod
-
-=encoding UTF-8
-
-=for :stopwords Karen Etheridge Сергей Романов programmatically irc
-
-=head1 NAME
+# NAME
 
 Acme::CPANAuthors::Nonhuman - We are non-human CPAN authors
 
-=head1 VERSION
+# VERSION
 
 version 0.012
 
-=head1 SYNOPSIS
+# SYNOPSIS
 
     use Acme::CPANAuthors;
     use Acme::CPANAuthors::Nonhuman;
@@ -87,15 +18,13 @@ version 0.012
     my $url      = $authors->avatar_url('MITHALDU');
     my $kwalitee = $authors->kwalitee('GAURAV');
 
-=head1 DESCRIPTION
+# DESCRIPTION
 
 This class provides a hash of PAUSE IDs and names of non-human CPAN authors.
 On the internet, no one knows you're a cat (unless your avatar gives it away)!
 
-=begin html
-
 <div style="text-align:center;padding:0px !important">
-<!-- this data was generated at build time via __DATA__ section and Dist::Zilla::Plugin::MungeFile::WithData 0.004 -->
+<!-- this data was generated at build time via \_\_DATA\_\_ section and Dist::Zilla::Plugin::MungeFile::WithData 0.004 -->
 <a href="http://metacpan.org/author/ETHER"><img style="margin-bottom:5px;margin-right:3px !important" src="http://www.gravatar.com/avatar/bdc5cd06679e732e262f6c1b450a0237?d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fbdc5cd06679e732e262f6c1b450a0237" alt="ETHER" title="ETHER (Karen Etheridge), 76 distributions" /></a>
 <a href="http://metacpan.org/author/VOJ"><img style="margin-bottom:5px;margin-right:3px !important" src="http://www.gravatar.com/avatar/9827ddb7c8cb132375cf55bf7e624250?d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fdcad11c6680a6c59cc31d2bf1b3975e5" alt="VOJ" title="VOJ (Jakob Voß), 49 distributions" /></a>
 <a href="http://metacpan.org/author/MITHALDU"><img style="margin-bottom:5px;margin-right:3px !important" src="http://www.gravatar.com/avatar/2e8c9bda08fde339f0dc2110d9ddd5c9?d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fd9c28af939032ab0c30fd7be8fdc1040" alt="MITHALDU" title="MITHALDU (Christian Walde), 28 distributions" /></a>
@@ -137,26 +66,24 @@ On the internet, no one knows you're a cat (unless your avatar gives it away)!
 
 </div>
 
-=end html
-
 The original list of authors was determined via
-L<The Faces of CPAN|http://hexten.net/cpan-faces/>.
+[The Faces of CPAN](http://hexten.net/cpan-faces/).
 
-I wrote this module initially as a reaction to a previous L<Acme::CPANAuthors>
+I wrote this module initially as a reaction to a previous [Acme::CPANAuthors](http://search.cpan.org/perldoc?Acme::CPANAuthors)
 distribution that inappropriately highlighted a particular demographic (it has
 now since been deleted).  Then, I realized that so much of the content I
 wanted to include in this module could be programmatically generated, so I
 continued on as an exercise in templating code at build time using raw data in
-the C<__DATA__> section.  That support code has since been split off into its
-own distribution, L<Dist::Zilla::Plugin::MungeFile::WithData>.
+the `__DATA__` section.  That support code has since been split off into its
+own distribution, [Dist::Zilla::Plugin::MungeFile::WithData](http://search.cpan.org/perldoc?Dist::Zilla::Plugin::MungeFile::WithData).
 
-=head1 SUPPORT
+# SUPPORT
 
-Bugs may be submitted through L<the RT bug tracker|https://rt.cpan.org/Public/Dist/Display.html?Name=Acme-CPANAuthors-Nonhuman>
-(or L<bug-Acme-CPANAuthors-Nonhuman@rt.cpan.org|mailto:bug-Acme-CPANAuthors-Nonhuman@rt.cpan.org>).
-I am also usually active on irc, as 'ether' at C<irc.perl.org>.
+Bugs may be submitted through [the RT bug tracker](https://rt.cpan.org/Public/Dist/Display.html?Name=Acme-CPANAuthors-Nonhuman)
+(or [bug-Acme-CPANAuthors-Nonhuman@rt.cpan.org](mailto:bug-Acme-CPANAuthors-Nonhuman@rt.cpan.org)).
+I am also usually active on irc, as 'ether' at `irc.perl.org`.
 
-It may well be the case that some of the authors listed here are B<not>
+It may well be the case that some of the authors listed here are __not__
 actually non-human, in which case this absolutely must be reported immediately
 so this module can be corrected! We of the furry and clawed will not stand for
 imposters in our midst.
@@ -165,62 +92,21 @@ On the other hand, occasionally new brothers and sisters join the Perl family
 and are not recognized here -- please let me know so they can be added to the
 list.
 
-=head1 SEE ALSO
+# SEE ALSO
 
-=over 4
+- [Acme::CPANAuthors](http://search.cpan.org/perldoc?Acme::CPANAuthors) - the main class to manipulate this one.
 
-=item *
-
-L<Acme::CPANAuthors> - the main class to manipulate this one.
-
-=back
-
-=head1 AUTHOR
+# AUTHOR
 
 Karen Etheridge <ether@cpan.org>
 
-=head1 COPYRIGHT AND LICENSE
+# COPYRIGHT AND LICENSE
 
 This software is copyright (c) 2013 by Karen Etheridge.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
-=head1 CONTRIBUTOR
+# CONTRIBUTOR
 
 Сергей Романов <complefor@rambler.ru>
-
-=cut
-
-__DATA__
-ABERNDT
-ACE
-AKIHITO
-AKXLIX
-ARUN
-ARUNBEAR
-BAHOOTYPR
-BBAXTER
-BIGREDS
-DAIBA
-DOLMEN
-ETHER
-FGA
-GAURAV
-GLEACH
-HIROSE
-INFRARED
-IVANWILLS
-KAARE
-KIBI
-MAXS
-MITHALDU
-PERLPIE
-ORCHEW
-VOJ
-ROBMAN
-SIMCOP
-SKINGTON
-ZOUL
-SZARATE
-ZHDA
