@@ -92,7 +92,7 @@
    "provides" : {
       "Acme::CPANAuthors::Nonhuman" : {
          "file" : "lib/Acme/CPANAuthors/Nonhuman.pm",
-         "version" : "0.012"
+         "version" : "0.013"
       }
    },
    "release_status" : "stable",
@@ -108,10 +108,10 @@
          "web" : "https://github.com/karenetheridge/Acme-CPANAuthors-Nonhuman"
       }
    },
-   "version" : "0.012",
+   "version" : "0.013",
    "x_Dist_Zilla" : {
       "perl" : {
-         "version" : "5.019004"
+         "version" : "5.019005"
       },
       "plugins" : [
          {
@@ -411,12 +411,12 @@
          {
             "class" : "Dist::Zilla::Plugin::RunExtraTests",
             "name" : "@Author::ETHER/RunExtraTests",
-            "version" : "0.014"
+            "version" : "0.013"
          },
          {
             "class" : "Dist::Zilla::Plugin::ReadmeAnyFromPod",
             "name" : "@Author::ETHER/ReadmeAnyFromPod",
-            "version" : "0.132973"
+            "version" : "0.132970"
          },
          {
             "class" : "Dist::Zilla::Plugin::MakeMaker::Fallback",
@@ -436,7 +436,7 @@
          {
             "class" : "Dist::Zilla::Plugin::CheckSelfDependency",
             "name" : "@Author::ETHER/CheckSelfDependency",
-            "version" : "0.004"
+            "version" : "0.005"
          },
          {
             "class" : "Dist::Zilla::Plugin::Run::AfterBuild",
@@ -587,6 +587,7 @@
    },
    "x_authority" : "cpan:ETHER",
    "x_contributors" : [
+      "Carlos Lima <carlos@cpan.org>",
       "\u0421\u0435\u0440\u0433\u0435\u0439 \u0420\u043e\u043c\u0430\u043d\u043e\u0432 <complefor@rambler.ru>"
    ]
 }

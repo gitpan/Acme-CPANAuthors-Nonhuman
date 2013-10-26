@@ -1,5 +1,8 @@
 Revision history for Acme-CPANAuthors-Nonhuman
 
+0.013     2013-10-26 17:01:19Z (Karen Etheridge)
+          - welcome CARLOS, our latest member!
+
 0.012     2013-10-24 05:25:54Z (Karen Etheridge)
           - author data is now generated using the 00whois.xml document,
             rather than 01mailrc.txt, to get non-asciified author names

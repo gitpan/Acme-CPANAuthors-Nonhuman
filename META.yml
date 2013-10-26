@@ -30,7 +30,7 @@ no_index:
 provides:
   Acme::CPANAuthors::Nonhuman:
     file: lib/Acme/CPANAuthors/Nonhuman.pm
-    version: 0.012
+    version: 0.013
 requires:
   Sub::Install: 0
   base: 2.18
@@ -43,10 +43,10 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=Acme-CPANAuthors-Nonhuman
   homepage: https://github.com/karenetheridge/Acme-CPANAuthors-Nonhuman
   repository: https://github.com/karenetheridge/Acme-CPANAuthors-Nonhuman.git
-version: 0.012
+version: 0.013
 x_Dist_Zilla:
   perl:
-    version: 5.019004
+    version: 5.019005
   plugins:
     -
       class: Dist::Zilla::Plugin::MungeFile::WithData
@@ -279,11 +279,11 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::RunExtraTests
       name: '@Author::ETHER/RunExtraTests'
-      version: 0.014
+      version: 0.013
     -
       class: Dist::Zilla::Plugin::ReadmeAnyFromPod
       name: '@Author::ETHER/ReadmeAnyFromPod'
-      version: 0.132973
+      version: 0.132970
     -
       class: Dist::Zilla::Plugin::MakeMaker::Fallback
       name: '@Author::ETHER/MakeMaker::Fallback'
@@ -299,7 +299,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::CheckSelfDependency
       name: '@Author::ETHER/CheckSelfDependency'
-      version: 0.004
+      version: 0.005
     -
       class: Dist::Zilla::Plugin::Run::AfterBuild
       name: '@Author::ETHER/Run::AfterBuild'
@@ -415,4 +415,5 @@ x_Dist_Zilla:
     version: 5.001
 x_authority: cpan:ETHER
 x_contributors:
+  - 'Carlos Lima <carlos@cpan.org>'
   - 'Сергей Романов <complefor@rambler.ru>'
