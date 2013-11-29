@@ -2,18 +2,23 @@ use strict;
 use warnings FATAL => 'all';
 
 use Test::More;
-use Test::Deep;
 use if $ENV{AUTHOR_TESTING}, 'Test::Warnings';
-use Acme::CPANAuthors 0.16;
-use Acme::CPANAuthors::Nonhuman;
 
-plan skip_all => 'Need a built version of Acme::CPANAuthors::Nonhuman for this test'
-    if -d '.git';
+BEGIN { plan skip_all => 'Need a built version of Acme::CPANAuthors::Nonhuman for this test' if -d '.git' }
+
+use Test::Deep;
+use Acme::CPANAuthors 0.16;
 
 my $authors = Acme::CPANAuthors->new('Nonhuman');
 
 isa_ok($authors, 'Acme::CPANAuthors');
 ok(()= $authors->id, 'we have ids');
+
+cmp_deeply(
+    [ $authors->id ],
+    superbagof('ETHER'),
+    'ETHER is in the list of ids returned',
+);
 
 cmp_deeply(
     [ Acme::CPANAuthors->look_for('ETHER') ],
