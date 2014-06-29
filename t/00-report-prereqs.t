@@ -46,25 +46,26 @@ my $static_prereqs = do { my $x = {
        'configure' => {
                         'requires' => {
                                         'ExtUtils::MakeMaker' => '6.30',
-                                        'Module::Build::Tiny' => '0.034'
+                                        'Module::Build::Tiny' => '0.036'
                                       }
                       },
        'develop' => {
                       'recommends' => {
-                                        'Dist::Zilla::PluginBundle::Author::ETHER' => '0.049'
+                                        'Dist::Zilla::PluginBundle::Author::ETHER' => '0.065'
                                       },
                       'requires' => {
                                       'Acme::CPANAuthors' => '0.23',
                                       'Acme::CPANAuthors::Factory' => '0',
-                                      'Dist::Zilla' => '5.013',
+                                      'Dist::Zilla' => '5',
                                       'Dist::Zilla::Plugin::ContributorsFromGit' => '0',
                                       'Dist::Zilla::Plugin::GitHub::Update' => '0',
                                       'Dist::Zilla::Plugin::GithubMeta' => '0',
-                                      'Dist::Zilla::Plugin::MakeMaker::Fallback' => '0',
-                                      'Dist::Zilla::Plugin::ModuleBuildTiny' => '0.004',
+                                      'Dist::Zilla::Plugin::MakeMaker::Fallback' => '0.008',
+                                      'Dist::Zilla::Plugin::ModuleBuildTiny::Fallback' => '0.005',
                                       'Dist::Zilla::Plugin::MungeFile::WithDataSection' => '0.003',
                                       'Dist::Zilla::Plugin::Prereqs' => '0',
-                                      'Dist::Zilla::PluginBundle::Author::ETHER' => '0.019',
+                                      'Dist::Zilla::Plugin::Test::CleanNamespaces' => '0',
+                                      'Dist::Zilla::PluginBundle::Author::ETHER' => '0.060',
                                       'File::Spec' => '0',
                                       'Gravatar::URL' => '0',
                                       'HTTP::Tiny' => '0',
@@ -77,11 +78,13 @@ my $static_prereqs = do { my $x = {
                                       'Pod::Weaver::Section::Contributors' => '0',
                                       'Test::CPAN::Changes' => '0.19',
                                       'Test::CPAN::Meta' => '0',
+                                      'Test::CleanNamespaces' => '0.13',
                                       'Test::Kwalitee' => '1.12',
                                       'Test::More' => '0.94',
                                       'Test::NoTabs' => '0',
                                       'Test::Pod' => '1.41',
                                       'Test::Pod::Coverage' => '1.08',
+                                      'Test::Spelling' => '0.12',
                                       'Test::Warnings' => '0',
                                       'perl' => '5.010'
                                     }
@@ -90,7 +93,6 @@ my $static_prereqs = do { my $x = {
                       'requires' => {
                                       'Sub::Install' => '0',
                                       'base' => '2.18',
-                                      'namespace::autoclean' => '0',
                                       'perl' => '5.008',
                                       'strict' => '0',
                                       'utf8' => '0',
