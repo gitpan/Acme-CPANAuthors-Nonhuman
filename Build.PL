@@ -70,13 +70,12 @@ EOW
         "Karen Etheridge <ether\@cpan.org>"
       ],
       "dist_name" => "Acme-CPANAuthors-Nonhuman",
-      "dist_version" => "0.018",
+      "dist_version" => "0.019",
       "license" => "perl",
       "module_name" => "Acme::CPANAuthors::Nonhuman",
       "recommends" => {},
       "recursive_test_files" => 1,
       "requires" => {
-        "Sub::Install" => 0,
         "base" => "2.18",
         "perl" => "5.008",
         "strict" => 0,

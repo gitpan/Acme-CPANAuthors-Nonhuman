@@ -76,7 +76,6 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "Acme::CPANAuthors::Nonhuman",
   "PREREQ_PM" => {
-    "Sub::Install" => 0,
     "base" => "2.18",
     "strict" => 0,
     "utf8" => 0,
@@ -92,7 +91,7 @@ my %WriteMakefileArgs = (
     "Test::More" => 0,
     "if" => 0
   },
-  "VERSION" => "0.018",
+  "VERSION" => "0.019",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -104,7 +103,6 @@ my %FallbackPrereqs = (
   "File::Spec" => 0,
   "Module::Pluggable" => 0,
   "Module::Runtime" => 0,
-  "Sub::Install" => 0,
   "Test::Deep" => 0,
   "Test::More" => 0,
   "base" => "2.18",

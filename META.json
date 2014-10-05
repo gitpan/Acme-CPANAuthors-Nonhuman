@@ -113,11 +113,9 @@
             "Dist::Zilla::Plugin::UploadToCPAN" : "0",
             "Dist::Zilla::PluginBundle::Author::ETHER" : "0.068",
             "File::Spec" : "0",
-            "Gravatar::URL" : "0",
             "HTTP::Tiny" : "0",
             "IO::Handle" : "0",
             "IPC::Open3" : "0",
-            "List::Util" : "0",
             "Parse::CPAN::Whois" : "0",
             "Pod::Coverage::TrustPod" : "0",
             "Pod::Weaver" : "4",
@@ -137,7 +135,6 @@
       },
       "runtime" : {
          "requires" : {
-            "Sub::Install" : "0",
             "base" : "2.18",
             "perl" : "5.008",
             "strict" : "0",
@@ -164,7 +161,7 @@
    "provides" : {
       "Acme::CPANAuthors::Nonhuman" : {
          "file" : "lib/Acme/CPANAuthors/Nonhuman.pm",
-         "version" : "0.018"
+         "version" : "0.019"
       }
    },
    "release_status" : "stable",
@@ -180,7 +177,7 @@
          "web" : "https://github.com/karenetheridge/Acme-CPANAuthors-Nonhuman"
       }
    },
-   "version" : "0.018",
+   "version" : "0.019",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.021003"
@@ -897,7 +894,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "v0.018",
+                  "tag" : "v0.019",
                   "tag_format" : "v%v%t",
                   "tag_message" : "v%v%t",
                   "time_zone" : "local"
