@@ -30,12 +30,12 @@
       "configure" : {
          "requires" : {
             "ExtUtils::MakeMaker" : "0",
-            "Module::Build::Tiny" : "0.038"
+            "Module::Build::Tiny" : "0.039"
          }
       },
       "develop" : {
          "recommends" : {
-            "Dist::Zilla::PluginBundle::Author::ETHER" : "0.073"
+            "Dist::Zilla::PluginBundle::Author::ETHER" : "0.075"
          },
          "requires" : {
             "Acme::CPANAuthors" : "0.23",
@@ -56,7 +56,7 @@
             "Dist::Zilla::Plugin::ExecDir" : "0",
             "Dist::Zilla::Plugin::FileFinder::ByName" : "0",
             "Dist::Zilla::Plugin::GenerateFile::ShareDir" : "0",
-            "Dist::Zilla::Plugin::Git::Check" : "0",
+            "Dist::Zilla::Plugin::Git::Check" : "2.025",
             "Dist::Zilla::Plugin::Git::CheckFor::CorrectBranch" : "0.004",
             "Dist::Zilla::Plugin::Git::CheckFor::MergeConflicts" : "0",
             "Dist::Zilla::Plugin::Git::Commit" : "2.020",
@@ -94,8 +94,8 @@
             "Dist::Zilla::Plugin::PromptIfStale" : "0",
             "Dist::Zilla::Plugin::Readme" : "0",
             "Dist::Zilla::Plugin::ReadmeAnyFromPod" : "0.142180",
-            "Dist::Zilla::Plugin::Run::AfterBuild" : "0",
-            "Dist::Zilla::Plugin::Run::AfterRelease" : "0",
+            "Dist::Zilla::Plugin::Run::AfterBuild" : "0.024",
+            "Dist::Zilla::Plugin::Run::AfterRelease" : "0.024",
             "Dist::Zilla::Plugin::RunExtraTests" : "0.019",
             "Dist::Zilla::Plugin::ShareDir" : "0",
             "Dist::Zilla::Plugin::Test::CPAN::Changes" : "0.008",
@@ -161,7 +161,7 @@
    "provides" : {
       "Acme::CPANAuthors::Nonhuman" : {
          "file" : "lib/Acme/CPANAuthors/Nonhuman.pm",
-         "version" : "0.019"
+         "version" : "0.020"
       }
    },
    "release_status" : "stable",
@@ -177,7 +177,7 @@
          "web" : "https://github.com/karenetheridge/Acme-CPANAuthors-Nonhuman"
       }
    },
-   "version" : "0.019",
+   "version" : "0.020",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.021003"
@@ -220,7 +220,7 @@
                }
             },
             "name" : "@Author::ETHER/Git::NextVersion",
-            "version" : "2.024"
+            "version" : "2.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::PromptIfStale",
@@ -236,7 +236,7 @@
                }
             },
             "name" : "@Author::ETHER/stale modules, build",
-            "version" : "0.027"
+            "version" : "0.028"
          },
          {
             "class" : "Dist::Zilla::Plugin::PromptIfStale",
@@ -250,7 +250,7 @@
                }
             },
             "name" : "@Author::ETHER/stale modules, release",
-            "version" : "0.027"
+            "version" : "0.028"
          },
          {
             "class" : "Dist::Zilla::Plugin::ExecDir",
@@ -283,7 +283,7 @@
                }
             },
             "name" : "@Author::ETHER/Git::GatherDir",
-            "version" : "2.024"
+            "version" : "2.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaYAML",
@@ -345,7 +345,7 @@
                }
             },
             "name" : "@Author::ETHER/Test::Compile",
-            "version" : "2.046"
+            "version" : "2.048"
          },
          {
             "class" : "Dist::Zilla::Plugin::Test::NoTabs",
@@ -750,11 +750,23 @@
             "config" : {
                "Dist::Zilla::Plugin::Run::Role::Runner" : {
                   "run" : [
-                     "bash -c \"if [[ `dirname %d` != .build ]]; then test -e .ackrc && grep -q -- '--ignore-dir=%d' .ackrc || echo '--ignore-dir=%d' >> .ackrc; fi; if [[ %d =~ ^%n-[.[:xdigit:]]+$ ]]; then rm -f .latest; ln -s %d .latest; fi\""
+                     "bash -c \"if [[ `dirname %d` != .build ]]; then test -e .ackrc && grep -q -- '--ignore-dir=%d' .ackrc || echo '--ignore-dir=%d' >> .ackrc; fi\""
                   ]
                }
             },
-            "name" : "@Author::ETHER/Run::AfterBuild",
+            "name" : "@Author::ETHER/.ackrc",
+            "version" : "0.026"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Run::AfterBuild",
+            "config" : {
+               "Dist::Zilla::Plugin::Run::Role::Runner" : {
+                  "eval" : [
+                     "if ('%d' =~ /^%n-[.[:xdigit:]]+$/) { unlink '.latest'; symlink '%d', '.latest'; }"
+                  ]
+               }
+            },
+            "name" : "@Author::ETHER/.latest",
             "version" : "0.026"
          },
          {
@@ -778,7 +790,7 @@
                }
             },
             "name" : "@Author::ETHER/initial check",
-            "version" : "2.024"
+            "version" : "2.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::CheckFor::MergeConflicts",
@@ -831,7 +843,7 @@
                }
             },
             "name" : "@Author::ETHER/after tests",
-            "version" : "2.024"
+            "version" : "2.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::CheckIssues",
@@ -852,8 +864,8 @@
             "class" : "Dist::Zilla::Plugin::Run::AfterRelease",
             "config" : {
                "Dist::Zilla::Plugin::Run::Role::Runner" : {
-                  "run" : [
-                     "rm -f README.md"
+                  "eval" : [
+                     "unlink 'README.md'"
                   ]
                }
             },
@@ -886,7 +898,7 @@
                }
             },
             "name" : "@Author::ETHER/Git::Commit",
-            "version" : "2.024"
+            "version" : "2.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Tag",
@@ -894,7 +906,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "v0.019",
+                  "tag" : "v0.020",
                   "tag_format" : "v%v%t",
                   "tag_message" : "v%v%t",
                   "time_zone" : "local"
@@ -904,7 +916,7 @@
                }
             },
             "name" : "@Author::ETHER/Git::Tag",
-            "version" : "2.024"
+            "version" : "2.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::GitHub::Update",
@@ -925,7 +937,7 @@
                }
             },
             "name" : "@Author::ETHER/Git::Push",
-            "version" : "2.024"
+            "version" : "2.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::Run::AfterRelease",
